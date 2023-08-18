@@ -85,6 +85,7 @@
     "@uni-helper/volar-service-uni-pages": "^0.2.2",
     "@unocss/eslint-config": "^0.52.5",
     "@unocss/preset-icons": "^0.55.1",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.43.0",
     "lint-staged": "^13.2.2",

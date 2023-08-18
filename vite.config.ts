@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+
 import Uni from '@dcloudio/vite-plugin-uni'
 import UniHelperManifest from '@uni-helper/vite-plugin-uni-manifest'
 import UniHelperPages from '@uni-helper/vite-plugin-uni-pages'
@@ -10,6 +12,9 @@ import UnoCSS from 'unocss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    vueJsx({
+      // options are passed on to @vue/babel-plugin-jsx
+    }),
     // https://github.com/uni-helper/vite-plugin-uni-manifest
     UniHelperManifest(),
     // https://github.com/uni-helper/vite-plugin-uni-pages
@@ -20,6 +25,7 @@ export default defineConfig({
     UniHelperComponents({
       dts: 'src/components.d.ts',
       directoryAsNamespace: true,
+      dirs: ['src/components', 'src/design'],
     }),
     Uni(),
     // https://github.com/antfu/unplugin-auto-import

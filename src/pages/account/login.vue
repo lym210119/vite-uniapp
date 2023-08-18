@@ -17,13 +17,15 @@ function handleLogin() {
 
 <template>
   <view class="p-3">
-    <YInput v-model="username" class="mb-3" placeholder="请输入用户名" />
-    <YInput v-model="password" class="mb-3" placeholder="请输入密码" />
-    <YInput v-model="vercode" class="mb-3" placeholder="请输入验证码" />
+    <Input v-model="username" class="mb-3" placeholder="请输入用户名" />
+    <Input v-model="password" class="mb-3" placeholder="请输入密码" />
+    <Input v-model="vercode" class="mb-3" placeholder="请输入验证码" />
     <button @click="handleLogin">
       登录
     </button>
     <view class="i-logos-vue text-3xl" />
+
+    <Button text="登录" />
   </view>
 </template>
 
