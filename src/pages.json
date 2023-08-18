@@ -1,0 +1,103 @@
+{
+  "pages": [
+    {
+      "path": "pages/account/login",
+      "type": "home",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/about",
+      "type": "page"
+    },
+    {
+      "path": "pages/hi",
+      "type": "page",
+      "layout": "home"
+    },
+    {
+      "path": "pages/index",
+      "type": "page"
+    },
+    {
+      "path": "pages/tabbar/customer",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "客户"
+      }
+    },
+    {
+      "path": "pages/tabbar/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/tabbar/mine",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/tabbar/task",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "任务"
+      }
+    }
+  ],
+  "globalStyle": {
+    "backgroundColor": "@bgColor",
+    "backgroundColorBottom": "@bgColorBottom",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarTitleText": "锦呼",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "blurEffect": "extralight",
+    "color": "#999999",
+    "borderStyle": "black",
+    "spacing": "5px",
+    "height": "50px",
+    "selectedColor": "#0062cc",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "static/images/tabbar/home2.png",
+        "selectedIconPath": "static/images/tabbar/home1.png",
+        "pagePath": "pages/tabbar/index"
+      },
+      {
+        "text": "客户",
+        "iconPath": "static/images/tabbar/customer2.png",
+        "selectedIconPath": "static/images/tabbar/customer1.png",
+        "pagePath": "pages/tabbar/customer"
+      },
+      {
+        "text": "任务",
+        "iconPath": "static/images/tabbar/task2.png",
+        "selectedIconPath": "static/images/tabbar/task1.png",
+        "pagePath": "pages/tabbar/task"
+      },
+      {
+        "text": "我的",
+        "iconPath": "static/images/tabbar/my2.png",
+        "selectedIconPath": "static/images/tabbar/my1.png",
+        "pagePath": "pages/tabbar/mine"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  },
+  "subPackages": []
+}
