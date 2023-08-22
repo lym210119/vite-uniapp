@@ -1,48 +1,35 @@
 {
   "pages": [
     {
-      "path": "pages/account/login",
+      "path": "pages/login/index",
       "type": "home",
       "style": {
         "navigationBarTitleText": "登录"
       }
     },
     {
-      "path": "pages/about",
-      "type": "page"
-    },
-    {
-      "path": "pages/hi",
-      "type": "page",
-      "layout": "home"
-    },
-    {
-      "path": "pages/index",
-      "type": "page"
-    },
-    {
-      "path": "pages/tabbar/customer",
+      "path": "pages/customer/index",
       "type": "page",
       "style": {
         "navigationBarTitleText": "客户"
       }
     },
     {
-      "path": "pages/tabbar/index",
+      "path": "pages/home/index",
       "type": "page",
       "style": {
         "navigationBarTitleText": "首页"
       }
     },
     {
-      "path": "pages/tabbar/mine",
+      "path": "pages/mine/index",
       "type": "page",
       "style": {
         "navigationBarTitleText": "我的"
       }
     },
     {
-      "path": "pages/tabbar/task",
+      "path": "pages/task/index",
       "type": "page",
       "style": {
         "navigationBarTitleText": "任务"
@@ -71,25 +58,25 @@
         "text": "首页",
         "iconPath": "static/images/tabbar/home2.png",
         "selectedIconPath": "static/images/tabbar/home1.png",
-        "pagePath": "pages/tabbar/index"
+        "pagePath": "pages/home/index"
       },
       {
         "text": "客户",
         "iconPath": "static/images/tabbar/customer2.png",
         "selectedIconPath": "static/images/tabbar/customer1.png",
-        "pagePath": "pages/tabbar/customer"
+        "pagePath": "pages/customer/index"
       },
       {
         "text": "任务",
         "iconPath": "static/images/tabbar/task2.png",
         "selectedIconPath": "static/images/tabbar/task1.png",
-        "pagePath": "pages/tabbar/task"
+        "pagePath": "pages/task/index"
       },
       {
         "text": "我的",
         "iconPath": "static/images/tabbar/my2.png",
         "selectedIconPath": "static/images/tabbar/my1.png",
-        "pagePath": "pages/tabbar/mine"
+        "pagePath": "pages/mine/index"
       }
     ]
   },

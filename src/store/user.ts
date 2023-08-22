@@ -10,8 +10,9 @@ export const useUserStore = defineStore('user', {
     }
   },
   actions: {
-    setUserInfo(data: {}) {
+    setUserInfo(data: any) {
       this.userInfo = data
     },
   },
+  unistorage: true, // 开启后对 state 的数据读写都将持久化
 })
