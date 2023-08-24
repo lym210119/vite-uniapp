@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { checkPhone, getVerifyCode, login, pswLogin } from '@/api'
+import { checkPhone, getUserInfo, getVerifyCode, login, pswLogin } from '@/api'
 import { useUserStore } from '@/store/user'
 
-const { userInfo, setUserInfo } = useUserStore()
+const { userInfo, setToken, setUserInfo } = useUserStore()
 
 const loginType = ref('password')
 const isAgree = ref(true)
@@ -69,10 +69,15 @@ function handleLogin() {
 
   // 登录成功回调函数
   function loginSuccess(res: any) {
-    setUserInfo(res.data)
-    uni.showToast({ title: '登录成功', icon: 'none' })
-    uni.switchTab({
-      url: '/pages/home/index',
+    const { scrm_token } = res.data
+    setToken(scrm_token)
+    // 登录后获取用户信息
+    getUserInfo().then((userInfo) => {
+      setUserInfo(userInfo)
+      uni.showToast({ title: '登录成功', icon: 'none' })
+      uni.switchTab({
+        url: '/pages/home/index',
+      })
     })
   }
 
