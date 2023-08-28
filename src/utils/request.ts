@@ -1,7 +1,4 @@
 import un from '@uni-helper/uni-network'
-import { useUserStore } from '@/store/user'
-
-const { token } = useUserStore()
 
 const instance = un.create({
   baseUrl: '/api',
@@ -13,9 +10,15 @@ const instance = un.create({
 instance.interceptors.request.use(
   (config) => {
     // 在发送请求之前做些什么
-
-    if (token)
-      config.headers['SCRM-TOKEN'] = token
+    try {
+      const value = uni.getStorageSync('user')
+      const { token } = JSON.parse(value)
+      if (token)
+        config.headers['SCRM-TOKEN'] = token
+    }
+    catch (e) {
+      // error
+    }
 
     // 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
     // const noTokenUrl = ['/wapapi/Manage/msg', '/wapapi/Manage/checkPhone']
