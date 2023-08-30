@@ -8,6 +8,15 @@
       }
     },
     {
+      "path": "pages/index",
+      "type": "home"
+    },
+    {
+      "path": "pages/hi",
+      "type": "page",
+      "layout": "home"
+    },
+    {
       "path": "pages/customer/index",
       "type": "page",
       "style": {

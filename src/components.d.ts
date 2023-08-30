@@ -16,6 +16,5 @@ declare module '@vue/runtime-core' {
     Input: typeof import('./design/Input.vue')['default']
     InputEntry: typeof import('./components/InputEntry.vue')['default']
     Logos: typeof import('./components/Logos.vue')['default']
-    SvgIcon: typeof import('./components/SvgIcon.vue')['default']
   }
 }

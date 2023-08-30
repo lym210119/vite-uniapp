@@ -68,8 +68,8 @@ function handleLogin() {
   }
 
   // 登录成功回调函数
-  function loginSuccess(res: any) {
-    const { scrm_token } = res.data
+  function loginSuccess(data: any) {
+    const { scrm_token } = data
     setToken(scrm_token)
     // 登录后获取用户信息
     getUserInfo().then((userInfo) => {
@@ -127,6 +127,8 @@ function handleLogin() {
       <view class="h-[44px] flex items-center justify-center rounded-[50px] bg-[#587FF8] text-center text-white" :class="{ 'opacity-40': loginBtnDisabled }" @click="handleLogin">
         登录
       </view>
+
+      <SvgIcon name="vue" color="#587FF8" />
 
       <view class="mt-[20px] text-center">
         <text class="text-xs font-normal text-gray-800" @click="toggleLoginType">

@@ -3,7 +3,7 @@ const { value: name } = useQuery('name')
 </script>
 
 <template>
-  <view>{{ name }}</view>
+  <div>{{ name }}</div>
 
   <Counter />
 </template>

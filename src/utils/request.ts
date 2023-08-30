@@ -8,17 +8,13 @@ const instance = un.create({
 
 // 添加请求拦截器
 instance.interceptors.request.use(
-  (config) => {
+  (config: { headers: { [x: string]: any } }) => {
     // 在发送请求之前做些什么
-    try {
-      const value = uni.getStorageSync('user')
-      const { token } = JSON.parse(value)
-      if (token)
-        config.headers['SCRM-TOKEN'] = token
-    }
-    catch (e) {
-      // error
-    }
+
+    const value = uni.getStorageSync('user')
+    const { token } = JSON.parse(value)
+    if (token)
+      config.headers['SCRM-TOKEN'] = token
 
     // 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
     // const noTokenUrl = ['/wapapi/Manage/msg', '/wapapi/Manage/checkPhone']
@@ -28,7 +24,7 @@ instance.interceptors.request.use(
 
     return config
   },
-  (error) => {
+  (error: any) => {
     // 对请求错误做些什么
     return Promise.reject(error)
   },
@@ -42,41 +38,40 @@ interface ResponseData extends Record<string, unknown> {
 
 // 添加响应拦截器
 instance.interceptors.response.use(
-  (response) => {
+  (response: { data: ResponseData }) => {
     // 2xx 范围内的状态码都会触发该函数
     // 对响应数据做点什么
-    const res = response.data as ResponseData
-    if (res.code === 1001) { // 重新登录
+    const { code, data, msg } = response.data as ResponseData
+    if (code === 1001) { // 重新登录
       uni.showToast({
-        title: res.msg,
+        title: msg,
         icon: 'none',
-        success: () => {
-          uni.reLaunch({
-            url: '/pages/login/index',
-          })
-        },
+      }).then(() => {
+        uni.reLaunch({
+          url: '/pages/login/index',
+        })
       })
-      return Promise.reject(new Error(res.msg))
+      return Promise.reject(new Error(msg))
     }
-    else if (res.code === 1002) {
+    else if (code === 1002) {
       uni.showToast({
-        title: res.msg,
+        title: msg,
         icon: 'none',
       })
-      return Promise.reject(new Error(res.msg))
+      return Promise.reject(new Error(msg))
     }
-    else if (res.code === 0) {
+    else if (code === 0) {
       uni.showToast({
-        title: res.msg,
+        title: msg,
         icon: 'none',
       })
-      return Promise.reject(new Error(res.msg))
+      return Promise.reject(new Error(msg))
     }
     else {
-      return res
+      return data
     }
   },
-  (error) => {
+  (error: any) => {
     // 超出 2xx 范围的状态码都会触发该函数
     // 对响应错误做点什么
     return Promise.reject(error)
