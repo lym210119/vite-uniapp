@@ -147,7 +147,7 @@ function handleLogin() {
     <view class="pb-[50px] pt-[60px] text-center text-xs font-normal text-gray-600">
       <text class="i-material-symbols:lock-outline" />
       <text class="">
-        忘记密码123233232
+        忘记密码
       </text>
     </view>
   </view>
