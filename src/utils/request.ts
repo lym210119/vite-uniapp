@@ -1,22 +1,27 @@
 import un from '@uni-helper/uni-network'
+import { isH5 } from '@uni-helper/uni-env'
+
+const { VITE_APP_BASE_URL, VITE_APP_API_URL } = import.meta.env
 
 const instance = un.create({
-  baseUrl: '/api',
+  baseUrl: isH5 ? VITE_APP_BASE_URL : VITE_APP_API_URL,
   timeout: 60000,
   headers: { 'Content-Type': 'application/json' },
 })
 
 // 添加请求拦截器
 instance.interceptors.request.use(
-  (config: { headers: { [x: string]: any } }) => {
+  (config: any) => {
     // 在发送请求之前做些什么
 
     const value = uni.getStorageSync('user')
-    const { token } = JSON.parse(value)
-    if (token)
-      config.headers['SCRM-TOKEN'] = token
+    if (value) {
+      const { token } = JSON.parse(value || {})
+      if (token)
+        config.headers['SCRM-TOKEN'] = token
+    }
 
-    // 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
+    // 可以对某个url进行特别处理
     // const noTokenUrl = ['/wapapi/Manage/msg', '/wapapi/Manage/checkPhone']
 
     // if (noTokenUrl.includes(config.url))
@@ -38,7 +43,7 @@ interface ResponseData extends Record<string, unknown> {
 
 // 添加响应拦截器
 instance.interceptors.response.use(
-  (response: { data: ResponseData }) => {
+  (response: any) => {
     // 2xx 范围内的状态码都会触发该函数
     // 对响应数据做点什么
     const { code, data, msg } = response.data as ResponseData

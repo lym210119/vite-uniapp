@@ -128,8 +128,6 @@ function handleLogin() {
         登录
       </view>
 
-      <SvgIcon name="vue" color="#587FF8" />
-
       <view class="mt-[20px] text-center">
         <text class="text-xs font-normal text-gray-800" @click="toggleLoginType">
           {{ loginType === 'password' ? '短信登录' : '密码登录' }}
@@ -137,16 +135,16 @@ function handleLogin() {
       </view>
 
       <view class="mt-[90px] text-center text-xs font-normal text-indigo-500">
-        <label class="radio" @click="toggleAgree">
+        <label class="radio flex items-center justify-center" @click="toggleAgree">
           <radio value="r1" :checked="isAgree" style="transform:scale(0.7)" />
           <text>登录即同意《用户协议》和《隐私协议》</text>
         </label>
       </view>
     </view>
 
-    <view class="pb-[50px] pt-[60px] text-center text-xs font-normal text-gray-600">
+    <view class="flex items-center justify-center pb-[50px] pt-[60px] text-center text-xs font-normal text-gray-600">
       <text class="i-material-symbols:lock-outline" />
-      <text class="">
+      <text class="ml-1">
         忘记密码
       </text>
     </view>

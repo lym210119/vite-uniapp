@@ -46,7 +46,7 @@
     }
   ],
   "globalStyle": {
-    "backgroundColor": "@bgColor",
+    "backgroundColor": "#ffffff",
     "backgroundColorBottom": "@bgColorBottom",
     "backgroundColorTop": "@bgColorTop",
     "backgroundTextStyle": "@bgTxtStyle",

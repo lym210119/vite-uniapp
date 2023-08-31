@@ -18,8 +18,8 @@ export default defineConfig((mode: ConfigEnv) => {
   return {
     server: {
       proxy: {
-        '/api': {
-          target: env.VITE_APP_BASE_URL,
+        [env.VITE_APP_BASE_URL]: {
+          target: env.VITE_APP_API_URL,
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, ''),
         },

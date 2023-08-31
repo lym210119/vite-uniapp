@@ -27,7 +27,9 @@ function handleLogout() {
   <view @click="handleLogout">
     退出
   </view>
-  <view class="dark:bg-red:10">213232323</view>
+  <view class="dark:bg-red:10">
+    213232323
+  </view>
   <button>dark mode</button>
 </template>
 

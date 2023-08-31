@@ -72,7 +72,7 @@
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3081220230802001",
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3081220230802001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3081220230802001",
-    "@iconify-json/carbon": "^1.1.20",
+    "@iconify/json": "^2.2.109",
     "@types/node": "^20.5.4",
     "@uni-helper/uni-app-types": "^0.5.9",
     "@uni-helper/uni-env": "^0.0.3",
