@@ -9,11 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Button: typeof import('./design/Button.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
-    Drawer: typeof import('./design/Drawer.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
-    Input: typeof import('./design/Input.vue')['default']
     InputEntry: typeof import('./components/InputEntry.vue')['default']
     Logos: typeof import('./components/Logos.vue')['default']
   }

@@ -24,7 +24,7 @@ const loginBtnDisabled = computed(() => {
 
 // 在组件挂载前执行的生命周期钩子函数
 onBeforeMount(() => {
-  if (userInfo.uid) {
+  if (userInfo.id) {
     uni.switchTab({
       url: '/pages/home/index',
     })
@@ -151,7 +151,7 @@ function handleLogin() {
   </view>
 </template>
 
-<route type="home" lang="json">
+<route lang="json">
 {
   "style": {
     "navigationBarTitleText": "登录"

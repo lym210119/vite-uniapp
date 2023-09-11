@@ -1,10 +1,11 @@
 {
   "pages": [
     {
-      "path": "pages/login/index",
+      "path": "pages/home/index",
       "type": "home",
       "style": {
-        "navigationBarTitleText": "登录"
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -24,10 +25,10 @@
       }
     },
     {
-      "path": "pages/home/index",
+      "path": "pages/login/index",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": "登录"
       }
     },
     {

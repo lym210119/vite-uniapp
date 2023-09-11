@@ -6,14 +6,10 @@ import { defineStore } from 'pinia'
 export const useUserStore = defineStore('user', {
   state() {
     return {
-      token: '',
       userInfo: {},
     }
   },
   actions: {
-    setToken(data: any) {
-      this.token = data
-    },
     setUserInfo(data: any) {
       this.userInfo = data
     },

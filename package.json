@@ -62,6 +62,7 @@
     "@uni-helper/uni-network": "^0.16.1",
     "@vueuse/core": "^10.3.0",
     "pinia": "2.0.35",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "vue": "^3.3.4",
     "vue-i18n": "^9.2.2"
   },
@@ -85,7 +86,6 @@
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.47.0",
     "lint-staged": "^14.0.1",
-    "pinia-plugin-unistorage": "^0.0.17",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.1.6",
     "unocss": "^0.55.2",
