@@ -18,8 +18,8 @@ export default defineConfig((mode: ConfigEnv) => {
   return {
     server: {
       proxy: {
-        [env.VITE_APP_BASE_URL]: {
-          target: env.VITE_APP_API_URL,
+        [env.VITE_BASE_URL]: {
+          target: env.VITE_PROXY_API,
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, ''),
         },
@@ -39,7 +39,7 @@ export default defineConfig((mode: ConfigEnv) => {
       UniHelperComponents({
         dts: 'src/components.d.ts',
         directoryAsNamespace: true,
-        dirs: ['src/components', 'src/design'],
+        dirs: ['src/components'],
       }),
       Uni(),
       // https://github.com/antfu/unplugin-auto-import

@@ -1,10 +1,9 @@
 import un from '@uni-helper/uni-network'
-import { isH5 } from '@uni-helper/uni-env'
 
-const { VITE_APP_BASE_URL, VITE_APP_API_URL } = import.meta.env
+const { VITE_BASE_URL } = import.meta.env
 
 const instance = un.create({
-  baseUrl: isH5 ? VITE_APP_BASE_URL : VITE_APP_API_URL,
+  baseUrl: VITE_BASE_URL,
   timeout: 60000,
   headers: { 'Content-Type': 'application/json' },
 })
