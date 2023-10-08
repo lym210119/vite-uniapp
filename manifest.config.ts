@@ -1,7 +1,7 @@
 import { defineManifestConfig } from '@uni-helper/vite-plugin-uni-manifest'
 
 export default defineManifestConfig({
-  'name': '锦呼',
+  'name': '锦渠',
   'appid': '',
   'description': '',
   'versionName': '1.0.0',

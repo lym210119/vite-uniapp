@@ -1,5 +1,5 @@
 {
-  "name": "锦呼",
+  "name": "锦渠",
   "appid": "",
   "description": "",
   "versionName": "1.0.0",
@@ -59,12 +59,12 @@
   "mp-toutiao": {
     "usingComponents": true
   },
-  "uniStatistics": {
-    "enable": false
-  },
-  "vueVersion": "3",
   "h5": {
     "darkmode": true,
     "themeLocation": "theme.json"
-  }
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "vueVersion": "3"
 }
