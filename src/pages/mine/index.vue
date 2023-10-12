@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { logout } from '@/api'
 import { useUserStore } from '@/store/user'
 
 const { setUserInfo } = useUserStore()
@@ -10,13 +9,13 @@ function handleLogout() {
     content: '确定要退出锦蚁云商APP吗?',
     success: (res) => {
       if (res.confirm) {
-        logout({}).then(() => {
-          setUserInfo({})
-          uni.removeStorageSync('user')
-          uni.reLaunch({
-            url: '/pages/login/index',
-          })
+        // logout({}).then(() => {
+        //   setUserInfo({})
+        uni.removeStorageSync('user')
+        uni.reLaunch({
+          url: '/pages/login/index',
         })
+        // })
       }
     },
   })

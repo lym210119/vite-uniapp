@@ -7,7 +7,7 @@
       <view class="flex flex-row justify-between">
         <view class="flex flex-col">
           <text class="text-bold text-lg text-black">
-            Hi~张三
+            Hi~张三123
           </text>
           <text class="text-xs text-gray">
             武汉锦辰数科技术有限公司123

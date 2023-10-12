@@ -93,63 +93,19 @@ function handleLogin() {
 </script>
 
 <template>
-  <view class="bg-[#f5f5f5]">
-    <view class="relative h-[247px] bg-[#597ef7]">
-      <image class="absolute right-0 top-0 h-[180px] w-[300px]" src="/static/images/198@2x.png" />
-      <view class="absolute bottom-0 left-0 right-0 h-[50px] from-[#537CFA] to-[#F5F5F5] bg-gradient-to-b" />
-    </view>
-
-    <view class="relative m-[10px] mt-[-90px] rounded-[16px] bg-white px-[30px] py-[40px]">
-      <view class="mb-2">
-        <text class="text-2xl font-bold text-gray-800">
-          欢迎登录
-        </text>
-      </view>
-      <view class="mb-[50px]">
-        <text class="text-sm font-normal text-gray-700">
-          锦蚁云商，助力生意增长
-        </text>
-      </view>
-
-      <view class="mb-[20px] flex items-center justify-center rounded-[50px] bg-[#f5f5f5] px-[20px] py-[14px]">
-        <input v-model="loginForm.phone" class="flex-1" type="text" placeholder="请输入手机号/用户名">
-      </view>
-      <view v-if="loginType === 'password'" class="mb-[20px] flex items-center justify-center rounded-[50px] bg-[#f5f5f5] px-[20px] py-[14px]">
-        <input v-model="loginForm.password" class="flex-1" type="password" placeholder="请输入密码">
-      </view>
-      <view v-if="loginType === 'sms'" class="mb-[20px] flex items-center justify-center rounded-[50px] bg-[#f5f5f5] px-[20px] py-[14px]">
-        <input v-model="loginForm.vercode" class="flex-1" type="number" placeholder="请输入验证码">
-        <text class="text-xs font-normal text-indigo-500" @click="sendVerificationCode">
-          {{ countdown < 60 ? `${countdown} 秒后重新发送` : '发送验证码' }}
-        </text>
-      </view>
-
-      <view class="h-[44px] flex items-center justify-center rounded-[50px] bg-[#587FF8] text-center text-white" :class="{ 'opacity-40': loginBtnDisabled }" @click="handleLogin">
-        登录
-      </view>
-
-      <view class="mt-[20px] text-center">
-        <text class="text-xs font-normal text-gray-800" @click="toggleLoginType">
-          {{ loginType === 'password' ? '短信登录' : '密码登录' }}
-        </text>
-      </view>
-
-      <view class="mt-[90px] text-center text-xs font-normal text-indigo-500">
-        <label class="radio flex items-center justify-center" @click="toggleAgree">
-          <radio value="r1" :checked="isAgree" style="transform:scale(0.7)" />
-          <text>登录即同意《用户协议》和《隐私协议》</text>
-        </label>
-      </view>
-    </view>
-
-    <view class="flex items-center justify-center pb-[50px] pt-[60px] text-center text-xs font-normal text-gray-600">
-      <text class="i-material-symbols:lock-outline" />
-      <text class="ml-1">
-        忘记密码
-      </text>
-    </view>
+  <view class="login-bg">
+    1232
   </view>
 </template>
+
+<style scoped>
+.login-bg {
+  height: 100vh;
+  background-image: url('/static/images/login-bg@2x.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+</style>
 
 <route lang="json">
 {
